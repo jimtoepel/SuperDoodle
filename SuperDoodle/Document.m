@@ -14,6 +14,8 @@
 
 @implementation Document
 
+#pragma mark - NSDocument Overrides
+
 - (instancetype)init {
     self = [super init];
     if (self) {
@@ -50,6 +52,14 @@
     // If you override either of these, you should also override -isEntireFileLoaded to return NO if the contents are lazily loaded.
     [NSException raise:@"UnimplementedMethod" format:@"%@ is unimplemented", NSStringFromSelector(_cmd)];
     return YES;
+}
+
+
+# pragma mark - Actions
+
+- (void)addTask:(id)sender
+{
+    NSLog(@"Add Task button clicked");
 }
 
 @end
