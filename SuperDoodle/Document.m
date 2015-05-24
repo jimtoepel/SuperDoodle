@@ -62,4 +62,13 @@
     NSLog(@"Add Task button clicked");
 }
 
+
+#pragma mark - Data Source Methods
+
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tv
+{
+    //This table view displays the tasks array, so the number of entires in the table view will be the same as the number of objects in the array
+    return [self.tasks count];
+}
+
 @end

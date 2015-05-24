@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 @interface Document : NSDocument
+    <NSTableViewDataSource>
 
 @property (nonatomic) NSMutableArray *tasks;
 
