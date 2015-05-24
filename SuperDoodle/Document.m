@@ -59,7 +59,22 @@
 
 - (void)addTask:(id)sender
 {
-    NSLog(@"Add Task button clicked");
+
+    // If there is no array yet, create one.
+    if (!self.tasks) {
+        self.tasks = [NSMutableArray array];
+    }
+    
+    [self.tasks addObject:@"New Item"];
+    
+    // reloadData tells the table view to refresh and ask its dataSource
+    // (which happens to be this Document object)
+    // for hte new data to display
+    [self.taskTable reloadData];
+    
+    // - UpdateChangeCount: tells the application whether or not the document
+    // has unsaved changes, NSChangeDone flages the document as unsaved
+    [self updateChangeCount:NSChangeDone];
 }
 
 
@@ -69,6 +84,26 @@
 {
     //This table view displays the tasks array, so the number of entires in the table view will be the same as the number of objects in the array
     return [self.tasks count];
+}
+
+- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *) tableColumn row:(NSInteger)row
+{
+    // Return the item from tasks that corresponds to the cell
+    // that the table view ants to display
+    return [self.tasks objectAtIndex:row];
+}
+
+- (void)tableView:(NSTableView *)tableView
+   setObjectValue:(id)object
+   forTableColumn:(NSTableColumn *)tableColumn
+              row:(NSInteger)row
+{
+    // When the user changes a task on the table view,
+    // update the tasks array
+    [self.tasks replaceObjectAtIndex:row withObject:object];
+    
+    // Then flag the document as having unsaved changes.
+    [self updateChangeCount:NSChangeDone];
 }
 
 @end
