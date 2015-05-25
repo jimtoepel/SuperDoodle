@@ -104,6 +104,29 @@
 }
 
 
+- (void)deleteTask:(id)sender
+{
+    if (!self.tasks) {
+        NSLog(@"Add delete popup here");
+    }
+    
+    NSInteger rowToRemove;
+    rowToRemove = [self.taskTable selectedRow];
+    [self.tasks removeObjectAtIndex:rowToRemove];
+    
+    [self.taskTable reloadData];
+    
+    [self updateChangeCount:NSChangeDone];
+}
+
+
+- (void)completeTask:(id)sender
+{
+    NSLog(@"Complete Task button clicked!");
+}
+
+
+
 #pragma mark - Data Source Methods
 
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tv

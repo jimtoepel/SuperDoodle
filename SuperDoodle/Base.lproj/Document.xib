@@ -23,8 +23,8 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mOL-Z8-Nk3">
-                        <rect key="frame" x="14" y="13" width="97" height="32"/>
-                        <buttonCell key="cell" type="push" title="Add Task" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UfB-ef-bf9">
+                        <rect key="frame" x="14" y="13" width="100" height="32"/>
+                        <buttonCell key="cell" type="push" title="New Task" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UfB-ef-bf9">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -39,7 +39,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="Jjf-4T-Znz" id="zOV-Ps-FJS">
-                                    <rect key="frame" x="0.0" y="0.0" width="238" height="117"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="465" height="19"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <size key="intercellSpacing" width="3" height="2"/>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -79,12 +79,36 @@
                             <autoresizingMask key="autoresizingMask"/>
                         </tableHeaderView>
                     </scrollView>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yva-Xn-5OW">
+                        <rect key="frame" x="114" y="13" width="80" height="32"/>
+                        <buttonCell key="cell" type="push" title="Delete" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ktR-FB-byc">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <connections>
+                                <action selector="deleteTask:" target="-2" id="P9D-I0-MdC"/>
+                            </connections>
+                        </buttonCell>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mwx-V3-pb9">
+                        <rect key="frame" x="393" y="13" width="100" height="32"/>
+                        <buttonCell key="cell" type="push" title="Complete" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ClF-LJ-snE">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <connections>
+                                <action selector="completeTask:" target="-2" id="nuZ-m1-biR"/>
+                            </connections>
+                        </buttonCell>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="mwx-V3-pb9" secondAttribute="trailing" constant="20" id="6rp-SE-9Qn"/>
+                    <constraint firstItem="Yva-Xn-5OW" firstAttribute="leading" secondItem="gIp-Ho-8D9" secondAttribute="leading" constant="120" id="H80-Zo-okk"/>
                     <constraint firstItem="mOL-Z8-Nk3" firstAttribute="leading" secondItem="gIp-Ho-8D9" secondAttribute="leading" constant="20" id="Jf5-Vu-Ec6"/>
+                    <constraint firstAttribute="bottom" secondItem="Yva-Xn-5OW" secondAttribute="bottom" constant="20" id="QjD-lq-PTc"/>
                     <constraint firstAttribute="bottom" secondItem="mOL-Z8-Nk3" secondAttribute="bottom" constant="20" id="VVV-qL-0AG"/>
                     <constraint firstAttribute="bottom" secondItem="zkN-lh-95R" secondAttribute="bottom" constant="52" id="Xs2-Y4-KKq"/>
                     <constraint firstItem="zkN-lh-95R" firstAttribute="top" secondItem="gIp-Ho-8D9" secondAttribute="top" constant="20" id="i5H-BO-P5N"/>
+                    <constraint firstAttribute="bottom" secondItem="mwx-V3-pb9" secondAttribute="bottom" constant="20" id="onM-AR-bob"/>
                     <constraint firstItem="zkN-lh-95R" firstAttribute="leading" secondItem="gIp-Ho-8D9" secondAttribute="leading" constant="20" id="qf3-bQ-Fv9"/>
                     <constraint firstAttribute="trailing" secondItem="zkN-lh-95R" secondAttribute="trailing" constant="20" id="yac-Kg-NE6"/>
                 </constraints>
